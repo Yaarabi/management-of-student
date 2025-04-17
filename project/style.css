@@ -1,0 +1,30 @@
+body{
+  background-color: black;
+  color: aliceblue;
+  font-size: 1rem;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  padding: 1rem 0;
+  
+  input {
+    padding: .7rem 0;
+    font-size: 1.2 rem;
+    
+  }
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+tr th{
+  border: 1px solid white;
+  width: 100px;
+}

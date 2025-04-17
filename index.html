@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <div class="name">           
+            <label id="nameTitle" for="name">Full Name :</label>
+            <input id="name" type="text" name="name" placeholder="Full Name">
+        </div>
+        <div class="groupe">
+            <label id="groupeTitle" for="groupe">Groupe :</label>
+            <input id="groupe" type="number" name="groupe" placeholder="Your Groupe">
+        </div>
+        <div class="note">
+            <label id="noteTitle" for="Note">Note :</label>
+            <input id="note" type="number" name="Note" placeholder="Your Note">
+        </div>
+        <div class="email">
+            <label id="emailTitle" for="groupe">Email :</label>
+            <input id="email" type="text" name="Email" placeholder="example@gmail.com">
+        </div>
+    </form>
+    <button id="Submit">Submit</button>
+    <section  id="list">
+        <div id="divName" class="output">
+            <h2 >Full name :</h2>
+            <h2 id="placeName"></h2>
+        </div>
+        <div id="statut" class="output">
+            <h2>Your statut :</h2>
+            <h2 id="placeStatut"></h2>
+        </div>
+        <button id="addStu"><img src="plus.png" height="20px" alt="plus icon"></button>
+        <table id="userList" class="List">
+            <tr>
+                <th style="width: 6%;">N</th>
+                <th>Full Name</th>
+                <th style="width: 8%;">Groupe</th>
+                <th>Email</th>
+                <th id="noteColun" style="width: 8%;">Note<img id="img" src="filter.png" alt="Filter Icon" style="height: 15px;"></th>
+                <th>statuts</th>
+                <th style="width: 10%;">Update</th>
+            </tr>
+        </table>
+        <table id="filterList" class="List">
+            <tr>
+                <th style="width: 6%;">N</th>
+                <th>Full Name</th>
+                <th style="width: 8%;">Groupe</th>
+                <th>Email</th>
+                <th style="width: 8%;">Note</th>
+                <th>statuts</th>
+            </tr>
+        </table>
+    </section>
+    <div id="update">
+        <form>
+            <div class="name">           
+                <label for="name">Full Name :</label>
+                <input id="newName" type="text" name="name" placeholder="Full Name">
+            </div>
+            <div class="groupe">
+                <label for="groupe">Groupe :</label>
+                <input id="newGroupe" type="number" name="groupe" placeholder="Your Groupe">
+            </div>
+            <div class="note">
+                <label for="Note">Note :</label>
+                <input id="newNote" type="number" name="Note" placeholder="Your Note">
+            </div>
+            <div class="email">
+                <label for="groupe">Email :</label>
+                <input id="newEmail" type="text" name="Email" placeholder="example@gmail.com">
+            </div>
+        </form>
+        <button id="save">update</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
