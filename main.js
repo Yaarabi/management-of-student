@@ -58,8 +58,6 @@ btnAdd.addEventListener('click', function (){
     document.getElementById('form').style.display='flex';
     document.getElementById('Submit').style.display='block';
     document.getElementById('list').style.display='none';
-    document.getElementById('userList').style.visibility= 'visible';
-    document.getElementById('filterList').style.visibility= 'hidden';
     for (let i=0; i<4; i++){
         document.querySelectorAll('label')[i].style.color='black'
         document.querySelectorAll('input')[i].style.borderColor='green'
@@ -128,13 +126,7 @@ btnSubmit.addEventListener('click', function(){
     }
     statut()
 
-    // let noteStud = parseInt(exameNote)
-    //     note.push(noteStud)
-    //     note.sort()
-    //     let ord = note.indexOf(noteStud)
-    //     console.log(note);
-    //     console.log(ord);
-
+    // 
 
     for(let i =0; i<7; i++){
         let td = document.createElement('td')
@@ -162,7 +154,7 @@ btnSubmit.addEventListener('click', function(){
                 td.textContent= 'Excellent ​🤪​✅​​'
             }
         }else if(i==6){
-            td.innerHTML='<img class="edit" src="edit.png" alt="Filter Icon" style="height: 15px;"><img class="delet" src="bin.png" alt="Filter Icon" style="height: 15px;">'
+            td.innerHTML='<img class="edit" src="/icon/edit.png" alt="Filter Icon" style="height: 15px;"><img class="delet" src="/icon/bin.png" alt="Filter Icon" style="height: 15px;">'
             td.backgroundColor='rgb(223, 221, 221)'
             // td.style.height='10%'
         }else{
@@ -219,17 +211,17 @@ document.addEventListener('click', function (event) {
             tdata[3].textContent= Emai
             tdata[4].textContent= Note
             if (Note>=0 && Note<10){
-                tdata[5].textContent= 'Failed ​😥'
+                return 'Failed ​😥'
                 }else if(Note>=10 && Note<12){
-                    tdata[5].textContent= 'Acceptable ​🙂​'
+                    return 'Acceptable ​🙂​'
                 }else if(Note>=12 && Note<14){
-                    tdata[5].textContent= 'Average ​😛​​'
+                    return 'Average ​😛​​'
                 }else if(Note>=14 && Note<18){
-                    tdata[5].textContent= 'Good ​🤗😜​🔥​​'
+                    return 'Good ​🤗😜​🔥​​'
                 }else if(Note>=14 && Note<18){
-                    tdata[5].textContent= 'Very good ​😜​🔥​​'
+                    return 'Very good ​😜​🔥​​'
                 }else {
-                    tdata[5].textContent= 'Excellent ​🤪​✅​​'
+                    return 'Excellent ​🤪​✅​​'
                 }
 
         document.getElementById('placeName').textContent= Name
@@ -303,9 +295,11 @@ function sortDb(db){
     return [...sortDb(right),pivotObj,...sortDb(left)];
 }
 let imgFilter = document.getElementById('img')
-    imgFilter.addEventListener('click', function(){
-        document.getElementById('userList').style.visibility= 'hidden';
-        document.getElementById('filterList').style.visibility= 'visible';
+    imgFilter.addEventListener('click' , function(){
+        document.getElementById('list').style.display='none';
+        document.getElementById('sortedList').style.display='flex';
+        document.getElementById('return').style.display='block';
+
         sortDb(db)
         const dbAfter=sortDb(db)
         console.log(sortDb(db));
@@ -317,7 +311,8 @@ function getStudents(data) {
     // sortDb()
     // console.log(sortDb());
     let i;
-    let tableData = document.getElementById('filterList')
+    let tableData = document.getElementById('tbody')
+    tableData.innerHTML=''
 
     for(i=0; i< data.length; i++){
         let newTr = document.createElement('tr')
@@ -325,14 +320,40 @@ function getStudents(data) {
         <td>${i+1}</td>
         <td>${data[i].fullName}</td>
         <td>${data[i].groupNum}</td>
-        <td>${data[i].exameNote}</td>
         <td>${data[i].thereEmail}</td>
-        <td>ratt</td>
+        <td>${data[i].exameNote}</td>
+        <td>${noteStatu(data[i].exameNote)}</td>
         `
         // console.log()
         tableData.appendChild(newTr)
     }
 }
+let btnRet= document.getElementById('return')
+btnRet.addEventListener('click', function(){
+    document.getElementById('list').style.display='flex';
+    document.getElementById('return').style.display='none';
+    document.getElementById('sortedList').style.display='none';
+
+})
+function noteStatu(Note){
+    if (Note>=0 && Note<10){
+        return 'Failed ​😥'
+        }else if(Note>=10 && Note<12){
+            return 'Acceptable ​🙂​'
+        }else if(Note>=12 && Note<14){
+            return 'Average ​😛​​'
+        }else if(Note>=14 && Note<18){
+            return 'Good ​🤗😜​🔥​​'
+        }else if(Note>=14 && Note<18){
+            return 'Very good ​😜​🔥​​'
+        }else {
+            return 'Excellent ​🤪​✅​​'
+        }
+}
+let closeBtn = document.getElementById('close')
+closeBtn.addEventListener('click', ()=>{
+    document.getElementById('update').style.display='none';
+})
 
 
 

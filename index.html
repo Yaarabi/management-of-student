@@ -35,31 +35,37 @@
             <h2>Your statut :</h2>
             <h2 id="placeStatut"></h2>
         </div>
-        <button id="addStu"><img src="plus.png" height="20px" alt="plus icon"></button>
+        <button id="addStu"><img src="/icon/plus.png" height="20px" alt="plus icon"></button>
         <table id="userList" class="List">
             <tr>
                 <th style="width: 6%;">N</th>
                 <th>Full Name</th>
                 <th style="width: 8%;">Groupe</th>
                 <th>Email</th>
-                <th id="noteColun" style="width: 8%;">Note<img id="img" src="filter.png" alt="Filter Icon" style="height: 15px;"></th>
+                <th id="noteColun" style="width: 8%;">Note<img id="img" src="/icon/filter.png" alt="Filter Icon" style="height: 15px;"></th>
                 <th>statuts</th>
                 <th style="width: 10%;">Update</th>
             </tr>
         </table>
+        
+    </section>
+
+    <div id="sortedList">
+        <button id="return" style="display: none;"><img src="/icon/close.png" height="30px" alt="close icon"></button>
         <table id="filterList" class="List">
-            <tr>
+            <thead>
                 <th style="width: 6%;">N</th>
                 <th>Full Name</th>
                 <th style="width: 8%;">Groupe</th>
                 <th>Email</th>
                 <th style="width: 8%;">Note</th>
                 <th>statuts</th>
-            </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
         </table>
-    </section>
+    </div>
     <div id="update">
-        <form>
+        <button id="close"><img src="/icon/close.png" height="30px" alt="close icon"></button>
             <div class="name">           
                 <label for="name">Full Name :</label>
                 <input id="newName" type="text" name="name" placeholder="Full Name">
@@ -76,9 +82,8 @@
                 <label for="groupe">Email :</label>
                 <input id="newEmail" type="text" name="Email" placeholder="example@gmail.com">
             </div>
-        </form>
-        <button id="save">update</button>
-    </div>
+            <button id="save">update</button>
+        </div>
     <script src="main.js"></script>
 </body>
 </html>

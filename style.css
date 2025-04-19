@@ -6,14 +6,15 @@ body{
     justify-content: center;
 
     #form{
-        height: 40vh;
+        height: 50vh;
         width: 40vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
         background-color: rgb(255, 255, 255);
-        border-radius: 5%;
+        border: 3px solid green;
+        border-radius: 15px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         div{
             display: flex;
@@ -37,7 +38,7 @@ body{
         margin-top: 40px;
         height: 40px;
         width: 100px;
-        background-color: blue;
+        background-color: green;
         color: white;
         border: none;
         font-weight: bolder;
@@ -99,24 +100,26 @@ body{
         }
     }
 }
-#filterList{
-    visibility: hidden;
-}
+
 #update{
     visibility: hidden;
     position: absolute;
     top: 7%;
-    width: 35vw;
-    height: 45vh;
+    width: 40vw;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: rgba(131, 131, 131, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-        
+    #close{
+        height:30px; 
+        width: 30px;
+        background-color: rgba(131, 131, 131, 0.8);
+    }
     div{
         display: flex;
         align-items: center;
@@ -131,25 +134,63 @@ body{
         }
         input{
             width: 20vw;
-            height: 30px;
+            height: 24px;
             border-top: 1px;
             border-right: 1px;
             border-left: 1px;
-            border-color: green;
-            background-color: rgb(238, 248, 241);
+            border-color: white;
+            background-color: rgb(185, 185, 185);
         }
     }
     button{
-        margin-top: 40px;
         height: 40px;
         width: 100px;
         background-color: white;
-        color: blue;
+        color: rgb(77, 77, 77);
         border: none;
         font-weight: bolder;
         border-radius: 5px;
     }
 }
-.none{
+#sortedList{
+    
     display: none;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+            
+        width: 80vw;
+
+        
+        tr{
+            width: 100%;
+            
+
+            th{
+                
+                height: 40px;
+                width: 20vw;
+                background-color: rgb(129, 129, 129);
+
+            }
+            
+        }
+        tr{
+            height: 27px;
+            td{
+                text-align: center;
+                border: 1px solid rgb(129, 129, 129);
+            }
+        }
+    
+
+
+    button{
+        
+        background-color: white;
+        color: white;
+        border: none;
+        
+        
+    }
 }
